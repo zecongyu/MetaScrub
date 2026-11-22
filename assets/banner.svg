@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-label="MetaScrub: share the photo, not your location. Removes GPS, device serials, author names and edit history from photos and documents, in your browser.">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0a0b8"/><stop offset="1" stop-color="#9ec5e6"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#10b981" stop-opacity="0"/><stop offset="0.85" stop-color="#10b981" stop-opacity="0.22"/><stop offset="1" stop-color="#10b981" stop-opacity="0.9"/>
+    </linearGradient>
+    <clipPath id="photo"><rect x="742" y="70" width="300" height="210" rx="18"/></clipPath>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f1411" flood-opacity="0.18"/></filter>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .scan { animation: scan 3.6s ease-in-out infinite; }
+      @keyframes scan { 0% { transform: translateY(-70px); } 65%, 100% { transform: translateY(230px); } }
+      @media (prefers-reduced-motion: reduce) { .scan { animation: none; transform: translateY(120px); } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="400" rx="24" fill="#f7f8f5"/>
+  <g fill="#0f1411" fill-opacity="0.05">
+    <circle cx="1180" cy="60" r="120"/><circle cx="660" cy="420" r="160"/>
+  </g>
+
+  <!-- brand -->
+  <g transform="translate(64 52)">
+    <rect width="42" height="42" rx="12" fill="#0f1411"/>
+    <path d="M11 27 23 15l6 6-12 12h-6z" fill="#10b981"/><path d="M19 33h12" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="118" y="82" class="sans" font-size="26" font-weight="800" fill="#0f1411" letter-spacing="-0.5">MetaScrub</text>
+
+  <!-- headline -->
+  <g class="sans" font-weight="850" letter-spacing="-2.6">
+    <text x="62" y="178" font-size="66" fill="#0f1411">Share the photo.</text>
+    <text x="62" y="250" font-size="66" fill="#10b981">Not your location.</text>
+  </g>
+  <text x="64" y="296" class="sans" font-size="20" fill="#5f6b64">GPS · device serials · author names · edit history, removed in your browser.</text>
+  <g class="mono" font-size="14" font-weight="700" fill="#0f1411">
+    <rect x="64" y="322" width="64" height="30" rx="8" fill="#fff" stroke="#e3e8e3" stroke-width="1.5"/><text x="96" y="342" text-anchor="middle">JPEG</text>
+    <rect x="136" y="322" width="56" height="30" rx="8" fill="#fff" stroke="#e3e8e3" stroke-width="1.5"/><text x="164" y="342" text-anchor="middle">PNG</text>
+    <rect x="200" y="322" width="64" height="30" rx="8" fill="#fff" stroke="#e3e8e3" stroke-width="1.5"/><text x="232" y="342" text-anchor="middle">WebP</text>
+    <rect x="272" y="322" width="64" height="30" rx="8" fill="#fff" stroke="#e3e8e3" stroke-width="1.5"/><text x="304" y="342" text-anchor="middle">DOCX</text>
+    <rect x="344" y="322" width="64" height="30" rx="8" fill="#fff" stroke="#e3e8e3" stroke-width="1.5"/><text x="376" y="342" text-anchor="middle">XLSX</text>
+    <rect x="416" y="322" width="64" height="30" rx="8" fill="#fff" stroke="#e3e8e3" stroke-width="1.5"/><text x="448" y="342" text-anchor="middle">PPTX</text>
+  </g>
+
+  <!-- photo card -->
+  <g filter="url(#sh)"><rect x="730" y="58" width="324" height="300" rx="24" fill="#ffffff"/></g>
+  <g clip-path="url(#photo)">
+    <rect x="742" y="70" width="300" height="210" fill="url(#sky)"/>
+    <circle cx="960" cy="132" r="28" fill="#ffd66b"/>
+    <path d="M742 230 C800 196 850 206 900 222 S990 196 1042 214 V280 H742Z" fill="#3c6e5a"/>
+    <path d="M742 256 C810 236 880 248 940 254 S1010 240 1042 246 V280 H742Z" fill="#234f41"/>
+    <rect class="scan" x="742" y="70" width="300" height="60" fill="url(#beam)"/>
+  </g>
+  <text x="754" y="306" class="sans" font-size="16" font-weight="750" fill="#0f1411">vacation-photo.jpg</text>
+  <text x="754" y="330" class="sans" font-size="14" fill="#5f6b64">20.1 KB → <tspan fill="#10b981" font-weight="700">19.1 KB</tspan> · 16 items removed</text>
+
+  <!-- metadata tags, struck through -->
+  <g class="mono" font-size="14" font-weight="700">
+    <g transform="translate(1076 92)">
+      <rect width="168" height="34" rx="17" fill="#ffe4e6"/>
+      <circle cx="18" cy="17" r="5" fill="#e11d48"/>
+      <text x="32" y="22" fill="#e11d48">40.749,-73.986</text>
+      <line x1="30" y1="17" x2="148" y2="17" stroke="#e11d48" stroke-width="2"/>
+    </g>
+    <g transform="translate(1076 138)">
+      <rect width="168" height="34" rx="17" fill="#ede9fe"/>
+      <circle cx="18" cy="17" r="5" fill="#7c3aed"/>
+      <text x="32" y="22" fill="#7c3aed">iPhone 15 Pro</text>
+      <line x1="30" y1="17" x2="140" y2="17" stroke="#7c3aed" stroke-width="2"/>
+    </g>
+    <g transform="translate(1076 184)">
+      <rect width="168" height="34" rx="17" fill="#ffedd5"/>
+      <circle cx="18" cy="17" r="5" fill="#ea580c"/>
+      <text x="32" y="22" fill="#ea580c">Jordan Avery</text>
+      <line x1="30" y1="17" x2="132" y2="17" stroke="#ea580c" stroke-width="2"/>
+    </g>
+    <g transform="translate(1076 230)">
+      <rect width="168" height="34" rx="17" fill="#e0f2fe"/>
+      <circle cx="18" cy="17" r="5" fill="#0284c7"/>
+      <text x="32" y="22" fill="#0284c7">SN-ABC123456</text>
+      <line x1="30" y1="17" x2="134" y2="17" stroke="#0284c7" stroke-width="2"/>
+    </g>
+    <g transform="translate(1076 296)">
+      <rect width="168" height="34" rx="17" fill="#d1fae5"/>
+      <text x="16" y="22" fill="#047857">✓ AI label kept</text>
+    </g>
+  </g>
+</svg>

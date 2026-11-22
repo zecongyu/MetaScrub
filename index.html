@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MetaScrub · Share the photo, not your location</title>
+  <meta name="description" content="Remove GPS location, device serials, author names and edit history from photos and Office documents before you share them. Runs entirely in your browser." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2310b981'/%3E%3Cpath d='M9 20.5 18.5 11l4.5 4.5-9.5 9.5H9z' fill='%23fff'/%3E%3Cpath d='M15 25h9' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="#">
+      <span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M9 20.5 18.5 11l4.5 4.5-9.5 9.5H9z" fill="currentColor"/><path d="M15 25h9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+      MetaScrub
+    </a>
+    <nav class="top-links">
+      <span class="pill"><i class="dot" aria-hidden="true"></i>Runs in your browser</span>
+      <a href="https://github.com/zecongyu/MetaScrub">GitHub</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Share the photo.<br /><em>Not your location.</em></h1>
+        <p>Photos and documents quietly carry <b>GPS coordinates</b>, <b>device serial numbers</b>, <b>author names</b> and <b>edit history</b>. MetaScrub finds and removes them before you share, without uploading anything.</p>
+        <ul class="formats" aria-label="Supported formats">
+          <li>JPEG</li><li>PNG</li><li>WebP</li><li>Word</li><li>Excel</li><li>PowerPoint</li>
+        </ul>
+      </div>
+
+      <div class="drop" id="drop" tabindex="0" role="button" aria-label="Choose files to scrub">
+        <div class="scan" aria-hidden="true"></div>
+        <div class="drop-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><rect x="12" y="8" width="40" height="48" rx="6" fill="none" stroke="currentColor" stroke-width="3"/><path d="M20 22h24M20 30h24M20 38h14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="46" cy="46" r="11" fill="var(--accent)"/><path d="m41 46 3.5 3.5L51 43" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <strong>Drop photos or documents</strong>
+        <span class="muted">or <u>choose files</u> · nothing leaves this tab</span>
+        <input id="file" type="file" multiple hidden accept=".jpg,.jpeg,.png,.webp,.docx,.xlsx,.pptx,image/jpeg,image/png,image/webp" />
+        <button type="button" class="btn ghost" id="sampleBtn">Try sample files</button>
+      </div>
+    </section>
+
+    <section class="stats" id="stats" hidden aria-live="polite">
+      <div><b id="sFiles">0</b><span>files scrubbed</span></div>
+      <div><b id="sItems">0</b><span>metadata items removed</span></div>
+      <div class="warn"><b id="sLoc">0</b><span>locations removed</span></div>
+      <div><b id="sBytes">0 KB</b><span>hidden data dropped</span></div>
+      <button type="button" class="btn" id="allBtn">Download all</button>
+    </section>
+
+    <ol class="results" id="results"></ol>
+
+    <section class="explain">
+      <h2>What gets removed, and what stays</h2>
+      <div class="grid">
+        <div class="col gone">
+          <h3>Removed</h3>
+          <ul>
+            <li><b>Location</b>: GPS position and altitude, city, country</li>
+            <li><b>Device</b>: camera / phone make, model, serial and lens numbers, maker notes</li>
+            <li><b>Identity</b>: artist, owner, author, last-modified-by, company, manager, comment authors</li>
+            <li><b>Timestamps</b>: taken, edited, printed, total editing time</li>
+            <li><b>History</b>: software, edit steps, revision numbers, templates</li>
+            <li><b>Hidden content</b>: embedded thumbnails, data after the image, AI prompts</li>
+          </ul>
+        </div>
+        <div class="col stay">
+          <h3>Always kept</h3>
+          <ul>
+            <li><b>Your content</b>: pixels and document text are never re-encoded</li>
+            <li><b>Orientation</b>: so photos don't turn sideways</li>
+            <li><b>Colour profile</b>: so colours look the same</li>
+            <li><b>AI disclosure</b>: C2PA content credentials and the IPTC "AI-generated" label. MetaScrub protects <i>people</i>, not the fact that an image was made by AI.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <span>No uploads · no analytics · no storage</span>
+    <span><a href="https://github.com/liuxiaomingskm/datashield-lightweight-labs">DataShield Lightweight Labs</a> initiative · MIT</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="src/metascrub.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
